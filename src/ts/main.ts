@@ -30,7 +30,7 @@ const stepTexts = {
   document.getElementById('animation-dialog').style.display = 'initial';
 
   const timeInput = document.getElementById('animation-time-input') as HTMLInputElement;
-  const animationTime = parseInt(timeInput.value, 10);
+  const animationTime = Math.max(200, parseInt(timeInput.value, 10));
 
   const rendererTarget = document.getElementById('animation-target');
 
