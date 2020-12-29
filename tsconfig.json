@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "lib": ["es5", "es6", "dom"],
+    "outDir": "./dist/",
+    "noImplicitAny": true,
+    "module": "es6",
+    "sourceMap": true,
+    "skipLibCheck": true,
+    "target": "es6",
+    "moduleResolution": "node",
+    "jsx": "react",
+    "allowJs": true
+  },
+  "exclude": [
+    "webpack.config.js"
+  ]
+}

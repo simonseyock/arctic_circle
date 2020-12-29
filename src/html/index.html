@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<div class="container">
+  <h1>Random tiling</h1>
+  <div id="setup-dialog">
+    <h2>Setup</h2>
+    <div class="form-group">
+      <label for="animation-time-input">Animation time in ms</label>
+      <input type="number" class="form-control" value="1000" min="200" max="2000" id="animation-time-input"/>
+      <small class="form-text text-muted">If you want to change the animation time afterwards, you have to reload the page.</small>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" id="step-renderer" value="stepRenderer" name="renderer"/>
+      <label for="step-renderer">Render animation one step at a time (using CSS Grid)</label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" id="webgl-renderer" value="webglRenderer" name="renderer"
+             checked="checked"/>
+      <label for="webgl-renderer">Render animation one phase at a time (using two.js and WebGL)</label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" id="webgl-renderer2" value="webglRenderer2" name="renderer"/>
+      <label for="webgl-renderer2">Render animation one phase at a time (using three.js and WebGL)</label>
+    </div>
+
+    <div class="form-group">
+      <button type="button" class="btn btn-primary" id="finishSetupButton">Finish Setup</button>
+    </div>
+  </div>
+  <div id="animation-dialog" style="display: none">
+    <div class="form-inline">
+      <div class="btn-group mr-2" role="group">
+        <button type="button" class="btn btn-primary" id="start-button">
+          <i class="bi bi-play-fill"></i>
+          Start
+        </button>
+        <button type="button" class="btn btn-primary" id="stop-button">
+          <i class="bi bi-stop-fill"></i>
+          Stop
+        </button>
+        <button type="button" class="btn btn-primary" id="step-button">
+          <i class="bi bi-skip-end-fill"></i>
+          Step
+        </button>
+      </div>
+
+      <div class="input-group mr-2">
+        <div class="input-group-prepend">
+          <div class="input-group-text">Phase:</div>
+        </div>
+        <input type="text" class="form-control" disabled="disabled" id="phase">
+      </div>
+
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <div class="input-group-text">Size:</div>
+        </div>
+        <input type="text" class="form-control" disabled="disabled" id="size">
+      </div>
+
+    </div>
+    <div class="row mt-2">
+      <div class="col-12">
+        <div id="animation-target"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

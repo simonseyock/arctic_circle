@@ -1,0 +1,94 @@
+$gridMaxSize: 800px;
+$cellMaxSize: $gridMaxSize / 15;
+
+// TODO: how to decide grid layout in CSS?
+.grid {
+  display: grid;
+
+  &.big {
+    width: $gridMaxSize;
+    height: $gridMaxSize;
+    grid-auto-columns: 1fr;
+    grid-auto-rows: 1fr;
+  }
+
+  &.small {
+    grid-auto-columns: $cellMaxSize;
+    grid-auto-rows: $cellMaxSize;
+  }
+}
+
+.fadein {
+  -webkit-animation: 1s ease 0s normal forwards 1 fadein;
+  animation: 1s ease 0s normal forwards 1 fadein;
+}
+
+.fadeout {
+  -webkit-animation: 1s ease 0s normal forwards 1 fadeout;
+  animation: 1s ease 0s normal forwards 1 fadeout;
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeout {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes fadeout {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.blocked {
+  background-color: black;
+}
+
+@mixin tile($url) {
+  border: 1px solid black;
+  background: no-repeat center/contain $url;
+}
+
+.left {
+  @include tile(url("~bootstrap-icons/icons/arrow-left.svg"));
+  background-color: yellow;
+}
+
+.up {
+  @include tile(url("~bootstrap-icons/icons/arrow-up.svg"));
+  background-color: dodgerblue;
+}
+
+.right {
+  @include tile(url("~bootstrap-icons/icons/arrow-right.svg"));
+  background-color: indianred;
+}
+
+.down {
+  @include tile(url("~bootstrap-icons/icons/arrow-down.svg"));
+  background-color: limegreen;
+}
